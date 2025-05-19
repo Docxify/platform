@@ -1,0 +1,87 @@
+/* app/dashboard/dashboard.css */
+.min-h-screen {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #171717;
+    transition: all 0.3s ease;
+  }
+  
+  html.dark .min-h-screen {
+    background-color: #0a0a0a;
+    color: #ededed;
+  }
+  
+  .flex-w-full {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .section {
+    padding: 1.5rem; /* 24px */
+    margin-top: 1.5rem; /* 24px */
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 1.5rem; /* 24px */
+  }
+  
+  /* Tailwind-like hover effects for buttons */
+  .bg-blue-800 {
+    background-color: #1e40af;
+  }
+  
+  .bg-blue-800:hover {
+    background-color: #1e3a8a;
+  }
+  
+  .bg-gray-600 {
+    background-color: #4b5563;
+  }
+  
+  .bg-gray-600:hover {
+    background-color: #374151;
+  }
+  
+  .rounded {
+    border-radius: 0.25rem; /* 4px */
+  }
+  
+  .px-2\.5 {
+    padding-left: 0.625rem; /* 10px */
+    padding-right: 0.625rem; /* 10px */
+  }
+  
+  .py-1 {
+    padding-top: 0.25rem; /* 4px */
+    padding-bottom: 0.25rem; /* 4px */
+  }
+  
+  .text-xs {
+    font-size: 0.75rem; /* 12px */
+  }
+  
+  .text-white {
+    color: #ffffff;
+  }
+  
+  .ml-2 {
+    margin-left: 0.5rem; /* 8px */
+  }
+  
+  .p-2 {
+    padding: 0.5rem; /* 8px */
+  }
+  
+  .hover\:bg-zinc-200:hover {
+    background-color: #e4e4e7;
+  }
+  
+  html.dark .hover\:bg-zinc-700:hover {
+    background-color: #3f3f46;
+  }
+  
+  .transition {
+    transition: background-color 0.3s ease;
+  }

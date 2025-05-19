@@ -24,3 +24,58 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer utilities {
+  .animate-blink {
+    animation: blink 2s steps(9, start) infinite;
+  }
+
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+}
+/* Add this to your globals.css or create a new CSS file */
+
+/* Basic animation for the glow effect */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+}
+
+/* More advanced animation with multiple stages */
+@keyframes breathing-glow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.25;
+    transform: scale(1.02);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+  75% {
+    opacity: 0.2;
+    transform: scale(1.03);
+  }
+}
+
+.glow-effect {
+  animation: breathing-glow 10s infinite ease-in-out;
+}
+
+.glow-effect-subtle {
+  animation: pulse-glow 8s infinite ease-in-out;
+}
+
+/* You can add these utility classes to your Tailwind config if you use Tailwind */

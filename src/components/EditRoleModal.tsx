@@ -38,7 +38,7 @@ export default function EditRoleModal({ isOpen, onClose, member, onEdit }: EditR
             <select
               value={editedRole}
               onChange={(e) => setEditedRole(e.target.value)}
-              className="mt-1 p-2 w-full border rounded-lg dark:bg-slate-700 dark:text-slate-200"
+              className="mt-1 p-2 w-full border text-sm rounded-lg dark:bg-slate-700 dark:text-slate-200"
               required
             >
               <option value="" disabled>Select a role</option>

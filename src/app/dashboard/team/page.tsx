@@ -142,10 +142,6 @@ export default function Team({ activities = [], members = [] }: TeamPageProps) {
         </div>
       </div>
 
-     
-
-
-     
 
       <AddMemberModal
         isOpen={isAddModalOpen}

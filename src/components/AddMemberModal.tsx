@@ -39,7 +39,7 @@ export default function AddMemberModal({ isOpen, onClose, onAdd }: AddMemberModa
               type="text"
               value={newMember.name}
               onChange={(e) => setNewMember({ ...newMember, name: e.target.value })}
-              className="mt-1 p-2 w-full border rounded-lg dark:bg-slate-700 dark:text-slate-200"
+              className="mt-1 block text-xs p-2 w-full border rounded-lg dark:bg-slate-700 dark:text-slate-200"
               required
             />
           </div>
@@ -48,7 +48,7 @@ export default function AddMemberModal({ isOpen, onClose, onAdd }: AddMemberModa
             <select
               value={newMember.role}
               onChange={(e) => setNewMember({ ...newMember, role: e.target.value })}
-              className="mt-1 p-2 w-full border rounded-lg dark:bg-slate-700 dark:text-slate-200"
+              className="mt-1 p-2 block text-xs w-full border rounded-lg dark:bg-slate-700 dark:text-slate-200"
               required
             >
               <option value="" disabled>Select a role</option>
@@ -65,7 +65,7 @@ export default function AddMemberModal({ isOpen, onClose, onAdd }: AddMemberModa
               type="email"
               value={newMember.email}
               onChange={(e) => setNewMember({ ...newMember, email: e.target.value })}
-              className="mt-1 p-2 w-full border rounded-lg dark:bg-slate-700 dark:text-slate-200"
+              className="block text-xs mt-1 p-2 w-full border rounded-lg dark:bg-slate-700 dark:text-slate-200"
               required
             />
           </div>
@@ -79,7 +79,7 @@ export default function AddMemberModal({ isOpen, onClose, onAdd }: AddMemberModa
             </button>
             <button
               type="submit"
-              className="p-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700"
+              className="p-2 rounded-lg bg-blue-800 text-white text-xs"
             >
               Add Member
             </button>

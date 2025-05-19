@@ -22,12 +22,6 @@ export default function QuickActions() {
 
   return (
     <div className="flex items-center gap-2 ml-auto">
-      <button className="bg-blue-800 text-xs font-sans text-white px-2.5 py-1 rounded transition">
-        + New Project
-      </button>
-      <button className="bg-gray-600 text-xs px-2.5 py-1 text-white rounded transition">
-        Import
-      </button>
       <button
         onClick={toggleTheme}
         className="ml-2 rounded p-2 transition"

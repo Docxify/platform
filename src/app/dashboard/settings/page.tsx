@@ -157,7 +157,7 @@ export default function Settings() {
       {/* Appearance Settings */}
       <div className="mb-8">
         <h3 className="text-lg font-semibold text-black dark:text-white mb-4">Appearance</h3>
-        <div className="border border-zinc-200 rounded-lg p-4 shadow-sm bg-white dark:bg-slate-800">
+        <div className="border border-zinc-200 rounded-lg p-4 bg-white dark:bg-slate-800">
           <div className="flex items-center justify-between mb-4">
             <div>
               <p className="text-sm font-medium text-zinc-900 dark:text-slate-200">Dark Mode</p>

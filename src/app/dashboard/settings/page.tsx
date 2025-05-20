@@ -179,7 +179,7 @@ export default function Settings() {
       {/* Domain Configuration */}
       <div className="mb-8">
         <h3 className="text-lg font-semibold text-black dark:text-white mb-4">Domain Configuration</h3>
-        <div className="border border-zinc-200 rounded-lg p-4 shadow-sm bg-white dark:bg-slate-800">
+        <div className="border border-zinc-200 rounded-lg p-4 bg-white dark:bg-slate-800">
           <p className="text-sm text-zinc-600 dark:text-slate-400 mb-2">Enter your custom domain (e.g., example.com). Configure DNS settings in your Vercel dashboard.</p>
           <input
             type="text"
@@ -194,7 +194,7 @@ export default function Settings() {
       {/* Sorting Preferences */}
       <div className="mb-8">
         <h3 className="text-lg font-semibold text-black dark:text-white mb-4">Sorting Preferences</h3>
-        <div className="border border-zinc-200 rounded-lg p-4 shadow-sm bg-white dark:bg-slate-800">
+        <div className="border border-zinc-200 rounded-lg p-4 bg-white dark:bg-slate-800">
           <p className="text-sm text-zinc-600 dark:text-slate-400 mb-2">Choose how to sort team members or activities</p>
           <select
             value={sortPreference}
@@ -212,7 +212,7 @@ export default function Settings() {
       {/* Notification Settings */}
       <div className="mb-8">
         <h3 className="text-lg font-semibold text-black dark:text-white mb-4">Notifications</h3>
-        <div className="border border-zinc-200 rounded-lg p-4 shadow-sm bg-white dark:bg-slate-800">
+        <div className="border border-zinc-200 rounded-lg p-4 bg-white dark:bg-slate-800">
           <div className="flex items-center justify-between mb-4">
             <div>
               <p className="text-sm font-medium text-zinc-900 dark:text-slate-200">Email Notifications</p>

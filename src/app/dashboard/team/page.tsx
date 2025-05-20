@@ -105,7 +105,7 @@ export default function Team({ activities = [], members = [] }: TeamPageProps) {
         </div>
 
         {/* Desktop View: Table for Members */}
-        <div className="hidden sm:block overflow-x-auto rounded-lg border border-zinc-200 bg-white shadow-sm">
+        <div className="hidden sm:block overflow-x-auto rounded-lg border border-zinc-200 bg-white">
           <table className="min-w-full divide-y divide-zinc-200">
             <thead className="bg-zinc-50">
               <tr>

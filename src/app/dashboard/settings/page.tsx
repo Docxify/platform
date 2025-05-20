@@ -132,7 +132,7 @@ export default function Settings() {
       {/* Profile Settings */}
       <div className="mb-8">
         <h3 className="text-lg font-semibold text-black dark:text-white mb-4">Profile</h3>
-        <div className="border border-zinc-200 rounded-lg p-4 shadow-sm bg-white dark:bg-slate-800">
+        <div className="border border-zinc-200 rounded-lg p-4 bg-white dark:bg-slate-800">
           <div className="mb-4">
             <label className="block text-sm font-medium text-zinc-700 dark:text-slate-300">Name</label>
             <input

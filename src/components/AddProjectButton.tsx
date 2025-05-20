@@ -10,10 +10,9 @@ export default function AddProjectButton({ onClick }: AddProjectButtonProps) {
   return (
     <button
       onClick={onClick}
-      className="p-2 rounded-lg text-white hover:opacity-90"
-      style={{ backgroundColor: 'var(--accent-color, #6366f1)' }}
+      className="p-2 rounded-lg text-sm text-white bg-blue-800 hover:opacity-90"
     >
-      Add Project
+      Create Project
     </button>
   );
 }

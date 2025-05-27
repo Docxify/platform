@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FileTree from './FileTree';
 import Editor from './Editor';
 import { notFound } from 'next/navigation';
@@ -102,40 +102,62 @@ If you find a bug, please report it by opening an issue on GitHub. Include the f
   return foundProject || null;
 }
 
-const EditorWrapper: React.FC<{ initialProject: Project }> = ({ initialProject }) => {
+export default function EditorPage({ params }: { params: Promise<{ projectId: string }> }) {
+  const [project, setProject] = useState<Project | null>(null);
+  const [sidebarWidth, setSidebarWidth] = useState(25); // Controlled by FileTree
   const [selectedFile, setSelectedFile] = useState<FileNode | null>(null);
 
-  return (
-    <div className="flex flex-1 overflow-hidden">
-      <FileTree
-        initialFileStructure={initialProject.fileStructure}
-        onSelectFile={setSelectedFile}
-      />
-      <Editor selectedFile={selectedFile} />
-    </div>
-  );
-};
-
-export default async function EditorPage({ params }: { params: Promise<{ projectId: string }> }) {
-  const { projectId } = await params;
-  const project = await getProject(projectId);
+  // Fetch project data
+  useEffect(() => {
+    const fetchProject = async () => {
+      const { projectId } = await params;
+      const data = await getProject(projectId);
+      if (!data) {
+        notFound();
+      }
+      setProject(data);
+    };
+    fetchProject();
+  }, [params]);
 
   if (!project) {
-    notFound();
+    return null; // Loading state or not found handled by notFound()
   }
 
   return (
-    <div className="flex flex-col h-screen bg-gray-100">
+    <div className="flex flex-col h-screen bg-gray-50">
       {/* Header */}
-      <header className="flex items-center justify-between p-2 bg-white border-b shadow-sm">
-        <div className="flex items-center space-x-2">
-          <span className="text-sm font-medium text-gray-600">main</span>
-          <span className="text-xs text-green-600">✓ Updated 4 hours ago</span>
+      <header className="flex items-center justify-between p-3 bg-white border-b border-gray-200 shadow-sm">
+        <div className="flex items-center space-x-3">
+          <span className="text-sm font-semibold text-gray-800">main</span>
+          <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded-full">
+            ✓ Updated 4 hours ago
+          </span>
         </div>
+        <button className="px-4 py-1.5 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition shadow-sm">
+          Publish
+        </button>
       </header>
 
-      {/* Main Content */}
-      <EditorWrapper initialProject={project} />
+      {/* Main Content with Resizable Panels */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* FileTree */}
+        <div style={{ width: `${sidebarWidth}%` }} className="bg-white p-3 overflow-y-auto shadow-sm border-r border-gray-200">
+          <FileTree
+            initialFileStructure={project.fileStructure}
+            onFileSelect={setSelectedFile}
+            onWidthChange={setSidebarWidth}
+          />
+        </div>
+
+        {/* Editor */}
+        <div
+          style={{ width: `${100 - sidebarWidth}%` }}
+          className="p-4 overflow-y-auto bg-gray-50"
+        >
+          <Editor initialContent={selectedFile?.content || ''} />
+        </div>
+      </div>
     </div>
   );
 }

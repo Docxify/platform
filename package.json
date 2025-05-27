@@ -9,13 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.27.9",
     "@supabase/supabase-js": "^2.49.4",
+    "@tiptap/extension-code-block": "^2.12.0",
+    "@tiptap/extension-code-block-lowlight": "^2.12.0",
+    "@tiptap/extension-highlight": "^2.12.0",
+    "@tiptap/extension-image": "^2.12.0",
+    "@tiptap/extension-link": "^2.12.0",
+    "@tiptap/extension-subscript": "^2.12.0",
+    "@tiptap/extension-superscript": "^2.12.0",
+    "@tiptap/extension-task-item": "^2.12.0",
+    "@tiptap/extension-task-list": "^2.12.0",
+    "@tiptap/extension-text-align": "^2.12.0",
+    "@tiptap/extension-typography": "^2.12.0",
+    "@tiptap/extension-underline": "^2.12.0",
+    "@tiptap/pm": "^2.12.0",
+    "@tiptap/react": "^2.12.0",
+    "@tiptap/starter-kit": "^2.12.0",
+    "@tiptap/suggestion": "^2.12.0",
     "heroicons": "^2.2.0",
+    "lowlight": "^3.3.0",
     "lucide-react": "^0.510.0",
     "next": "15.3.2",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-ace": "^14.0.1",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "tiptap-markdown": "^0.8.10"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -27,6 +48,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "postcss": "^8.5.3",
+    "sass": "^1.89.0",
     "tailwindcss": "^4.1.7",
     "typescript": "^5"
   }

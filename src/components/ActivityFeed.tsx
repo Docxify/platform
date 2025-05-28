@@ -1,8 +1,11 @@
+'use client';
+
 interface Activity {
   doc: string;
   project: string;
   time: string;
   change: string;
+  deployment: string;
   url: string;
 }
 
@@ -15,41 +18,35 @@ export default function ActivityFeed({ items = [] }: ActivityFeedProps) {
     <div className="container mx-auto p-4 lg:p-8 xl:max-w-7xl">
       <h2 className="text-md font-bold mb-5 text-black">Recent Activities</h2>
 
-      {/* Mobile Card View */}
-      <div className="sm:hidden space-y-4">
-        {items.length === 0 ? (
-          <div className="text-sm text-zinc-500 text-center">No recent activity</div>
-        ) : (
-          items.map((item, i) => (
-            <div
-              key={i}
-              onClick={() => window.open(item.url, '_blank')}
-              className="border border-zinc-200 rounded-lg p-4 shadow-sm hover:bg-zinc-50 cursor-pointer"
-            >
-              <p className="text-sm font-semibold text-zinc-900">{item.doc}</p>
-              <p className="text-sm text-zinc-700">Project: {item.project}</p>
-              <p className="text-sm italic text-zinc-600">Change: {item.change}</p>
-              <p className="text-sm text-zinc-500">Time: {item.time}</p>
-            </div>
-          ))
-        )}
-      </div>
-
-      {/* Desktop Table View */}
-      <div className="hidden sm:block overflow-x-auto rounded-lg border border-zinc-200 bg-white shadow-sm">
+      {/* Table View for All Screen Sizes */}
+      <div className="overflow-x-auto rounded-lg border border-zinc-200 bg-white shadow-sm">
         <table className="min-w-full divide-y divide-zinc-200">
           <thead className="bg-zinc-50">
             <tr>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-zinc-700">Document</th>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-zinc-700">Project</th>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-zinc-700">Change</th>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-zinc-700">Time</th>
+              <th className="px-4 py-2 text-left text-xs font-semibold text-zinc-700 sm:px-6 sm:py-3 sm:text-sm">
+                Document
+              </th>
+              <th className="px-4 py-2 text-left text-xs font-semibold text-zinc-700 sm:px-6 sm:py-3 sm:text-sm">
+                Project
+              </th>
+              <th className="px-4 py-2 text-left text-xs font-semibold text-zinc-700 sm:px-6 sm:py-3 sm:text-sm">
+                Change
+              </th>
+              <th className="px-4 py-2 text-left text-xs font-semibold text-zinc-700 sm:px-6 sm:py-3 sm:text-sm">
+                Deployment Check
+              </th>
+              <th className="px-4 py-2 text-left text-xs font-semibold text-zinc-700 sm:px-6 sm:py-3 sm:text-sm">
+                Time
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-zinc-100">
             {items.length === 0 ? (
               <tr>
-                <td colSpan={4} className="px-6 py-4 text-center text-sm text-zinc-500">
+                <td
+                  colSpan={5}
+                  className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-6 sm:py-4 sm:text-sm"
+                >
                   No recent activity
                 </td>
               </tr>
@@ -60,16 +57,21 @@ export default function ActivityFeed({ items = [] }: ActivityFeedProps) {
                   className="hover:bg-zinc-50 cursor-pointer"
                   onClick={() => window.open(item.url, '_blank')}
                 >
-                  <td className="px-6 py-4 text-sm font-medium text-zinc-900 whitespace-normal sm:whitespace-nowrap">
+                  <td className="px-4 py-3 text-xs font-medium text-zinc-900 sm:px-6 sm:py-4 sm:text-sm">
                     {item.doc}
                   </td>
-                  <td className="px-6 py-4 text-sm text-zinc-700 whitespace-normal sm:whitespace-nowrap">
+                  <td className="px-4 py-3 text-xs text-zinc-700 sm:px-6 sm:py-4 sm:text-sm">
                     {item.project}
                   </td>
-                  <td className="px-6 py-4 text-sm italic text-zinc-600 whitespace-normal sm:whitespace-nowrap">
+                  <td className="px-4 py-3 text-xs italic text-zinc-600 sm:px-6 sm:py-4 sm:text-sm">
                     {item.change}
                   </td>
-                  <td className="px-6 py-4 text-sm text-zinc-500 whitespace-normal sm:whitespace-nowrap">
+                  <td className="px-4 py-3 text-xs text-zinc-600 sm:px-6 sm:py-4 sm:text-sm">
+                    <span className="text-xs font-medium text-green-600 bg-green-200 px-2 py-1 rounded-full">
+                      {item.deployment}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-xs text-zinc-500 sm:px-6 sm:py-4 sm:text-sm">
                     {item.time}
                   </td>
                 </tr>

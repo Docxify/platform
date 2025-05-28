@@ -14,6 +14,7 @@ export default function DashboardPage() {
       pageCount: 12,
       lastUpdated: '2 days ago',
       isPublic: true,
+      deployment: 'Successful',
       url: 'example.docxify.com',
     },
     {
@@ -21,6 +22,7 @@ export default function DashboardPage() {
       pageCount: 8,
       lastUpdated: '4 days ago',
       isPublic: false,
+      deployment: 'Successful',
       url: 'example.docxify.com',
     },
   ];
@@ -31,6 +33,7 @@ export default function DashboardPage() {
       project: 'API Docs',
       change: 'Updated Introduction section',  // <-- Add this
       time: '3 hours ago',
+      deployment: 'Successful',
       url: 'example.docxify.com',
     },
     {
@@ -38,6 +41,7 @@ export default function DashboardPage() {
       project: 'Internal Handbook',
       change: 'Fixed typos',  // <-- Add this
       time: 'Yesterday',
+      deployment: 'Successful',
       url: 'example.docxify.com',
     },
   ];

@@ -27,9 +27,9 @@ export default function PrCard({ project, onDelete, getStatusColor }: PrCardProp
   const lastUpdatedText = timeDiffHours < 24 ? `${timeDiffHours} hours ago` : project.lastUpdated;
 
   return (
-    <div className="flex flex-col rounded-lg border border-zinc-200 bg-white  active:border-purple-200 p-6 relative">
+    <div className="flex flex-col rounded-lg border border-zinc-200 bg-white active:border-purple-200 p-6 relative">
       <div className="absolute top-4 right-4 flex gap-2">
-        <Link href={`/dashboard/projects/edit/${project.id}`} className="p-2 text-zinc-700 text-white rounded-md" aria-label="Edit project">
+        <Link href={`/dashboard/projects/edit/${project.id}`} className="p-2 text-zinc-700 rounded-md" aria-label="Edit project">
           <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
           </svg>
@@ -37,14 +37,13 @@ export default function PrCard({ project, onDelete, getStatusColor }: PrCardProp
         <div className="relative">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="p-2 text-zinc-700 rounded-md "
+            className="p-2 text-zinc-700 rounded-md"
             aria-label="Settings"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-           
           </button>
           {isDropdownOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white border border-zinc-200 rounded-md shadow-lg z-10">
@@ -55,7 +54,7 @@ export default function PrCard({ project, onDelete, getStatusColor }: PrCardProp
                 Delete Project
               </button>
               <Link
-                href={`/dashboard/projects/settings/${project.id}`}
+                href={`/dashboard/projects/manage/${project.id}`} // Updated route
                 onClick={() => setIsDropdownOpen(false)}
                 className="block w-full text-left px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100"
               >

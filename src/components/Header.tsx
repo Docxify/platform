@@ -25,11 +25,11 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav 
+    <nav
       className={`fixed w-full z-20 top-0 start-0 transition-all duration-300 border-b border-white/10 ${
-        scrolled 
-        ? 'bg-[#0f172a]/80 backdrop-blur-sm shadow-md' 
-        : 'bg-transparent'
+        scrolled
+          ? 'bg-[#0f172a]/80 backdrop-blur-sm shadow-md'
+          : 'bg-transparent'
       }`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -73,28 +73,32 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Navbar items - mobile view */}
-      <div
+        {/* Navbar items - mobile and desktop view */}
+        <div
   className={`${
     isOpen ? 'flex' : 'hidden'
-  } absolute top-full left-0 z-10 flex-col backdrop-blur-sm w-full md:static md:flex md:flex-row md:w-auto md:order-1 md:space-x-8`}
+  } flex-col w-full absolute top-full left-0 z-10 
+  md:static md:flex md:flex-row md:w-auto md:order-1 md:space-x-8
+  ${isOpen ? 'bg-[#0f172a]/90 backdrop-blur-sm' : 'bg-transparent'}
+  md:bg-transparent md:backdrop-blur-0`}
   id="navbar-sticky"
 >
-  <ul className="flex flex-col md:flex-row p-4 mt-4 md:p-0 md:mt-0 space-y-4 md:space-y-0 text-center md:text-left font-medium">
-    {['Features', 'Documentation', 'Pricing', 'Blog'].map((item) => (
-      <li key={item}>
-        <Link
-          href="#"
-          className="block py-2 px-3 text-white hover:bg-transparent transition-colors duration-200"
-          aria-current={item === 'Features' ? 'page' : undefined}
-        >
-          {item}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
 
+
+          <ul className="flex flex-col md:flex-row p-4 mt-4 md:p-0 md:mt-0 space-y-4 md:space-y-0 text-center md:text-left font-medium w-full">
+            {['Features', 'Documentation', 'Pricing', 'Blog'].map((item) => (
+              <li key={item} className="w-full md:w-auto">
+                <Link
+                  href="#"
+                  className="block py-2 px-3 text-white  transition-colors duration-200"
+                  aria-current={item === 'Features' ? 'page' : undefined}
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );

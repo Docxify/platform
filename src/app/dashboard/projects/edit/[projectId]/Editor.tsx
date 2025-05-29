@@ -21,12 +21,6 @@ const Editor: React.FC<EditorProps> = ({ initialContent }) => {
           <h3 className="text-sm font-semibold text-gray-800">
             {initialContent ? 'Editing: contribution.mdx' : 'Select a file to edit'}
           </h3>
-          <button
-            onClick={() => alert(`Saved: ${content}`)}
-            className="px-4 py-1.5 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition shadow-sm"
-          >
-            Save
-          </button>
         </div>
         <div className="flex-1 p-4 overflow-y-auto">
           <SimpleEditor

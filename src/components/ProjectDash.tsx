@@ -9,7 +9,7 @@ export default function DocsStatusCard() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
         {/* CARD 1 */}
-        <div className="flex flex-col rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50/50 active:border-purple-200 p-6">
+        <div className="flex flex-col rounded-lg border border-zinc-200 bg-white active:border-purple-200 p-6">
           {/* Status */}
           <div className="flex items-center gap-2 mb-4">
             <span className="w-2.5 h-2.5 bg-green-500 rounded-full"></span>
@@ -31,7 +31,7 @@ export default function DocsStatusCard() {
           {/* Action Buttons */}
           <div className="flex items-center gap-3 mt-auto">
             <button
-              className="p-2 bg-zinc-100 rounded-md hover:bg-zinc-200"
+              className="p-2 bg-zinc-100 rounded-md"
               aria-label="Duplicate document"
               type="button"
             >
@@ -42,7 +42,7 @@ export default function DocsStatusCard() {
             </button>
 
             <button
-              className="p-2 bg-zinc-100 rounded-md hover:bg-zinc-200"
+              className="p-2 bg-zinc-100 rounded-md"
               aria-label="Refresh"
               type="button"
             >
@@ -63,7 +63,7 @@ export default function DocsStatusCard() {
         </div>
 
         {/* CARD 2 */}
-        <div className="flex flex-col rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50/50 active:border-purple-200 p-6">
+        <div className="flex flex-col rounded-lg border border-zinc-200 bg-white active:border-purple-200 p-6">
           {/* Status */}
           <div className="flex items-center gap-2 mb-4">
             <span className="w-2.5 h-2.5 bg-gray-500 rounded-full"></span>
@@ -85,7 +85,7 @@ export default function DocsStatusCard() {
           {/* Action Buttons */}
           <div className="flex items-center gap-3 mt-auto">
             <button
-              className="p-2 bg-zinc-100 rounded-md hover:bg-zinc-200"
+              className="p-2 bg-zinc-100 rounded-md"
               aria-label="Duplicate document"
               type="button"
             >
@@ -96,7 +96,7 @@ export default function DocsStatusCard() {
             </button>
 
             <button
-              className="p-2 bg-zinc-100 rounded-md hover:bg-zinc-200"
+              className="p-2 bg-zinc-100 rounded-md"
               aria-label="Refresh"
               type="button"
             >

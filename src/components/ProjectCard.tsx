@@ -6,13 +6,13 @@ export default function ProjectCard() {
         {/* Pages Created */}
         <a
           href="#"
-          className="flex flex-col rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50/50 active:border-purple-200 lg:col-span-6"
+          className="flex flex-col rounded-lg border border-zinc-200 bg-white active:border-purple-200 lg:col-span-6"
         >
           <div className="flex grow items-center justify-between p-5">
             <dl>
             <dt className="text-sm font-bold">
   <div className="flex items-center gap-1">
-    Pages Created
+    Docs Created
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className="w-4 h-4 text-zinc-400"
@@ -26,7 +26,7 @@ export default function ProjectCard() {
   </div>
 </dt>
 
-              <dd className="text-2xl font-bold">23</dd>
+              <dd className="text-2xl font-bold">3</dd>
             </dl>
             <div className="flex items-center text-sm font-medium text-zinc-300">
               {/* Document Icon */}
@@ -41,7 +41,7 @@ export default function ProjectCard() {
         {/* Contributors */}
         <a
           href="#"
-          className="flex flex-col rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50/50 active:border-purple-200 lg:col-span-6"
+          className="flex flex-col rounded-lg border border-zinc-200 bg-white active:border-purple-200 lg:col-span-6"
         >
           <div className="flex grow items-center justify-between p-5">
             <dl>

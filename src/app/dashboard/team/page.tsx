@@ -32,9 +32,9 @@ export default function Team({ activities = [], members = [] }: TeamPageProps) {
     members.length
       ? members
       : [
-          { name: "Alice Smith", role: "Developer", email: "alice@team.com", lastActive: "2025-05-18" },
-          { name: "Bob Jones", role: "Designer", email: "bob@team.com", lastActive: "2025-05-17" },
-          { name: "Charlie Brown", role: "Manager", email: "charlie@team.com", lastActive: "2025-05-19" },
+          { name: 'Alice Smith', role: 'Owner', email: 'alice@team.com', lastActive: '2025-05-18' },
+          { name: 'Bob Jones', role: 'Member', email: 'bob@team.com', lastActive: '2025-05-17' },
+          { name: 'Charlie Brown', role: 'Member', email: 'charlie@team.com', lastActive: '2025-05-19' },
         ]
   );
 
@@ -43,7 +43,7 @@ export default function Team({ activities = [], members = [] }: TeamPageProps) {
   const [selectedMember, setSelectedMember] = useState<Member | null>(null);
 
   const handleAddMember = (newMember: { name: string; role: string; email: string; lastActive: string }) => {
-    setTeamMembers([...teamMembers, { ...newMember, lastActive: newMember.lastActive || new Date().toISOString().split("T")[0] }]);
+    setTeamMembers([...teamMembers, { ...newMember, lastActive: newMember.lastActive || new Date().toISOString().split('T')[0] }]);
     setIsAddModalOpen(false);
   };
 
@@ -79,33 +79,8 @@ export default function Team({ activities = [], members = [] }: TeamPageProps) {
           <AddMemberButton onClick={() => setIsAddModalOpen(true)} />
         </div>
 
-        {/* Mobile View: Card-like for Members */}
-        <div className="sm:hidden space-y-4">
-          {teamMembers.length === 0 ? (
-            <div className="text-sm text-zinc-500 text-center">No team members</div>
-          ) : (
-            teamMembers.map((member, i) => (
-              <div
-                key={i}
-                className="border border-zinc-200 rounded-lg p-4 shadow-sm hover:bg-zinc-50 flex justify-between items-start"
-              >
-                <div>
-                  <p className="text-sm font-semibold text-zinc-900">{member.name}</p>
-                  <p className="text-sm text-zinc-700">Role: {member.role}</p>
-                  <p className="text-sm text-zinc-600">Email: {member.email}</p>
-                  <p className="text-sm text-zinc-500">Last Active: {member.lastActive}</p>
-                </div>
-                <div className="flex gap-2">
-                  <EditRoleButton onClick={() => openEditModal(member)} />
-                  <DeleteTeamMemberButton onClick={() => handleDeleteMember(member)} />
-                </div>
-              </div>
-            ))
-          )}
-        </div>
-
-        {/* Desktop View: Table for Members */}
-        <div className="hidden sm:block overflow-x-auto rounded-lg border border-zinc-200 bg-white">
+        {/* Table View for All Screen Sizes */}
+        <div className="overflow-x-auto rounded-lg border border-zinc-200 bg-white">
           <table className="min-w-full divide-y divide-zinc-200">
             <thead className="bg-zinc-50">
               <tr>
@@ -141,7 +116,6 @@ export default function Team({ activities = [], members = [] }: TeamPageProps) {
           </table>
         </div>
       </div>
-
 
       <AddMemberModal
         isOpen={isAddModalOpen}
